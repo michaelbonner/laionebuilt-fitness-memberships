@@ -96,13 +96,13 @@ const Home = () => {
             )}
             {componentState === "fail" && (
               <p className="text-center text-orange-800 py-8 lg:px-16 text-2xl">
-                Please see a Laionebuilt staff member to update the status of
-                your membership
+                Please see a Laionebuilt staff member or visit
+                laionebuiltfitness.com to update the status of your membership.
               </p>
             )}
             {componentState === "success" && (
               <p className="text-center text-green-800 py-8 lg:px-16 text-2xl">
-                You're good to go. Thanks for being a member
+                You're good to go. Thank you for being a member!
               </p>
             )}
           </div>
