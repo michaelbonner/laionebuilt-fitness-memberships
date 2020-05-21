@@ -2,12 +2,16 @@ import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET);
 
 const chargeLastMonth = async (amount, customer) => {
-  return await stripe.charges.create({
-    amount,
-    currency: "usd",
+  return await stripe.paymentIntents.create({
     customer,
+    amount: amount,
+    confirm: true,
+    currency: "usd",
+    payment_method_types: ["card"],
     description: "Membership payment for last month",
   });
+
+  // return await stripe.paymentIntents.capture(paymentIntent.id);
 };
 
 export default async (req, res) => {
