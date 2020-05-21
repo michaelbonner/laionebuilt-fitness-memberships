@@ -10,8 +10,6 @@ const chargeLastMonth = async (amount, customer) => {
     payment_method_types: ["card"],
     description: "Membership payment for last month",
   });
-
-  // return await stripe.paymentIntents.capture(paymentIntent.id);
 };
 
 export default async (req, res) => {

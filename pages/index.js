@@ -57,12 +57,12 @@ const Home = () => {
       </Head>
 
       <div className="bg-white overflow-hidden shadow rounded-lg w-full lg:w-2/3 my-4">
-        <div className="border-b border-gray-200 px-4 py-5 sm:px-6">
-          <div className="bg-black px-6 py-3 mt-8 mx-8">
+        <div className="border-b border-gray-200 px-4 py-5 sm:px-6 bg-black">
+          <div className="bg-black px-6 py-3 my-2">
             <img src="/laionebuilt-header.png" alt="Laionebuilt Fitness Logo" />
           </div>
-          <h1 className="text-lg text-center m-4 text-xl pt-3">
-            Check Your Laionebuilt Membership
+          <h1 className="text-lg text-white text-center m-4 text-xl pt-3">
+            Check Your Membership
           </h1>
         </div>
         <div className="px-4 py-5 sm:p-6 bg-gray-100">
@@ -90,7 +90,7 @@ const Home = () => {
                 />
                 <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                   <button
-                    className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:bg-gray-400 transition duration-150 ease-in-out"
+                    className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:bg-gray-400 transition duration-150 ease-in-out"
                     disabled={isSubmitting}
                   >
                     Check My Membership
