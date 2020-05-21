@@ -52,7 +52,7 @@ const Home = () => {
         <title>Laionebuilt Fitness Membership</title>
       </Head>
 
-      <div className="bg-white overflow-hidden shadow rounded-lg w-full lg:w-2/3 my-8">
+      <div className="bg-white overflow-hidden shadow rounded-lg w-full lg:w-2/3 my-4">
         <div className="border-b border-gray-200 px-4 py-5 sm:px-6">
           <div className="bg-black px-6 py-3 mt-8 mx-8">
             <img src="/laionebuilt-header.png" alt="Laionebuilt Fitness Logo" />
