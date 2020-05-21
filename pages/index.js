@@ -46,13 +46,13 @@ const Home = () => {
         componentState === "fail" ? "bg-orange-500" : ""
       }${
         componentState === "success" ? "bg-green-500" : ""
-      } min-h-screen flex flex-col items-center justify-center`}
+      } min-h-screen flex flex-col items-center justify-center px-4`}
     >
       <Head>
         <title>Laionebuilt Fitness Membership</title>
       </Head>
 
-      <div className="bg-white overflow-hidden shadow rounded-lg w-full lg:w-2/3">
+      <div className="bg-white overflow-hidden shadow rounded-lg w-full lg:w-2/3 my-8">
         <div className="border-b border-gray-200 px-4 py-5 sm:px-6">
           <div className="bg-black px-6 py-3">
             <img src="/laionebuilt-header.png" />
@@ -62,7 +62,7 @@ const Home = () => {
           </h1>
         </div>
         <div className="px-4 py-5 sm:p-6 bg-gray-100">
-          <div className="px-12 my-8 sm:w-full">
+          <div className="px-4 lg:px-8 my-8 sm:w-full">
             {componentState === "initial" && (
               <form
                 autoComplete="off"
@@ -95,13 +95,13 @@ const Home = () => {
               </form>
             )}
             {componentState === "fail" && (
-              <p className="text-center text-orange-800 py-8 px-16 text-2xl">
+              <p className="text-center text-orange-800 py-8 lg:px-16 text-2xl">
                 Please see a Laionebuilt staff member to update the status of
                 your membership
               </p>
             )}
             {componentState === "success" && (
-              <p className="text-center text-green-800 py-8 px-16 text-2xl">
+              <p className="text-center text-green-800 py-8 lg:px-16 text-2xl">
                 You're good to go. Thanks for being a member
               </p>
             )}
