@@ -31,7 +31,7 @@ export default async (req, res) => {
     let activeSubscriptions;
     if (customers.data.length) {
       activeSubscriptions = customers.data.filter((customer) => {
-        return customer.subscriptions.total_count;
+        return !customer.delinquent && customer.subscriptions.total_count;
       });
       hasActiveSubscription = activeSubscriptions.length;
     } else {
