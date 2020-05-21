@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 
 const Home = () => {
-  const [componentState, setComponentState] = useState("initial");
+  const [componentState, setComponentState] = useState("initial"); // initial, success, fail
   const [email, setEmail] = useState("");
   const [countDown, setCountDown] = useState(10);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -46,10 +46,14 @@ const Home = () => {
         componentState === "fail" ? "bg-orange-500" : ""
       }${
         componentState === "success" ? "bg-green-500" : ""
-      } min-h-screen flex flex-col items-center justify-center px-4`}
+      } min-h-screen flex flex-col items-center justify-center px-4 transition duration-300 ease-in-out`}
     >
       <Head>
         <title>Laionebuilt Fitness Membership</title>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
 
       <div className="bg-white overflow-hidden shadow rounded-lg w-full lg:w-2/3 my-4">
@@ -95,9 +99,10 @@ const Home = () => {
               </form>
             )}
             {componentState === "fail" && (
-              <p className="text-center text-orange-800 py-8 lg:px-16 text-2xl">
-                Please see a Laionebuilt staff member or visit
-                laionebuiltfitness.com to update the status of your membership.
+              <p className="text-center text-orange-800 py-8 lg:px-16 text-2xl font-normal">
+                Please see a Laionebuilt staff member or visit{` `}
+                <span className="font-semibold">laionebuiltfitness.com</span> to
+                update the status of your membership.
               </p>
             )}
             {componentState === "success" && (
