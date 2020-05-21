@@ -54,7 +54,7 @@ const Home = () => {
 
       <div className="bg-white overflow-hidden shadow rounded-lg w-full lg:w-2/3 my-8">
         <div className="border-b border-gray-200 px-4 py-5 sm:px-6">
-          <div className="bg-black px-6 py-3">
+          <div className="bg-black px-6 py-3 mt-8 mx-8">
             <img src="/laionebuilt-header.png" />
           </div>
           <h1 className="text-lg text-center m-4 text-xl pt-3">
