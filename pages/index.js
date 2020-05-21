@@ -62,7 +62,17 @@ const Home = () => {
         <div className="px-4 py-5 sm:p-6 bg-gray-100">
           <div className="px-12 my-8 sm:w-full">
             {componentState === "initial" && (
-              <form className="sm:flex py-12" onClick={onClick}>
+              <form
+                autoComplete="off"
+                className="sm:flex py-12"
+                onClick={onClick}
+              >
+                <input
+                  autoComplete="false"
+                  className="hidden"
+                  name="hidden"
+                  type="text"
+                />
                 <input
                   aria-label="Email address"
                   type="email"
