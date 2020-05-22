@@ -1,6 +1,12 @@
 import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET);
 
+const getCustomerCharges = async (customer) => {
+  return await stripe.charges.list({
+    customer,
+  });
+};
+
 const chargeLastMonth = async (amount, customer) => {
   return await stripe.paymentIntents.create({
     customer,
@@ -22,10 +28,14 @@ export default async (req, res) => {
   };
 
   if (req.body.type === "customer.subscription.created") {
-    await chargeLastMonth(
-      req.body.data.object.plan.amount,
-      req.body.data.object.customer
-    );
+    // only charge once
+    const charges = await getCustomerCharges(req.body.data.object.customer);
+    if (charges.data.length === 1) {
+      await chargeLastMonth(
+        req.body.data.object.plan.amount,
+        req.body.data.object.customer
+      );
+    }
   }
 
   res.end(JSON.stringify(returnObject));
