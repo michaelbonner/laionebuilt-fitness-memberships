@@ -4,20 +4,20 @@ import { useEffect, useLayoutEffect } from "react";
 
 const Plan = () => {
   const router = useRouter();
-  const { planId } = router.query;
+  const { sku } = router.query;
 
   useLayoutEffect(() => {
     const stripe = window.Stripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
     async function fetchStripeCheckoutSession() {
-      let response = await (await fetch(`/api/plan/${planId}`)).json();
+      let response = await (await fetch(`/api/product/${sku}`)).json();
       stripe.redirectToCheckout({
         sessionId: response.data.id,
       });
     }
-    if (planId) {
+    if (sku) {
       fetchStripeCheckoutSession();
     }
-  }, [planId]);
+  }, [sku]);
 
   return (
     <div
