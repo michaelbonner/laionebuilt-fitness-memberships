@@ -49,7 +49,7 @@ const Home = () => {
       } min-h-screen flex flex-col items-center justify-center px-4 transition duration-300 ease-in-out`}
     >
       <Head>
-        <title>Laionebuilt Fitness Membership</title>
+        <title>Laionebuilt Fitness Membership App</title>
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
           rel="stylesheet"
