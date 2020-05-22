@@ -37,12 +37,14 @@ export default async (req, res) => {
 
   if (req.body.type === "customer.subscription.created") {
     // only charge once
-    const charges = await getCustomerCharges(req.body.data.object.customer);
-    if (charges.data.length === 1) {
-      await chargeLastMonth(
-        req.body.data.object.plan.amount,
-        req.body.data.object.customer
-      );
+    if (req.body.data.object.metadata.first_and_last) {
+      const charges = await getCustomerCharges(req.body.data.object.customer);
+      if (charges.data.length === 1) {
+        await chargeLastMonth(
+          req.body.data.object.plan.amount,
+          req.body.data.object.customer
+        );
+      }
     }
   }
 
