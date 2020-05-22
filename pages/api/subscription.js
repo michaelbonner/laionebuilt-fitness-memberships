@@ -7,13 +7,21 @@ const getCustomerCharges = async (customer) => {
   });
 };
 
+const getCustomerPaymentMethods = async (customer) => {
+  return await stripe.paymentMethods.list({
+    customer,
+    type: "card",
+  });
+};
+
 const chargeLastMonth = async (amount, customer) => {
+  const paymentMethods = await getCustomerPaymentMethods(customer);
   return await stripe.paymentIntents.create({
     customer,
     amount: amount,
     confirm: true,
     currency: "usd",
-    payment_method_types: ["card"],
+    payment_method: paymentMethods.data[0].id,
     description: "Membership payment for last month",
   });
 };
@@ -27,7 +35,7 @@ export default async (req, res) => {
     data: [],
   };
 
-  if (req.body.type === "customer.subscription.created") {
+  if (req.body.type === "customer.subscription.updated") {
     // only charge once
     const charges = await getCustomerCharges(req.body.data.object.customer);
     if (charges.data.length === 1) {
