@@ -10,12 +10,15 @@ const Plan = () => {
     const stripe = window.Stripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
     async function fetchStripeCheckoutSession() {
       let response = await (await fetch(`/api/plan/${planId}`)).json();
+      console.log("response", response);
       stripe.redirectToCheckout({
         sessionId: response.data.id,
       });
     }
-    fetchStripeCheckoutSession();
-  }, []);
+    if (planId) {
+      fetchStripeCheckoutSession();
+    }
+  }, [planId]);
 
   return (
     <div
@@ -26,7 +29,7 @@ const Plan = () => {
         <script src="https://js.stripe.com/v3/"></script>
       </Head>
 
-      <div className="w-full lg:w-2/3 my-4">Plan: {planId}</div>
+      <div className="w-full lg:w-2/3 my-4">Redirecting to checkout...</div>
     </div>
   );
 };
