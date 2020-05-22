@@ -36,8 +36,9 @@ export default async (req, res) => {
   };
 
   if (req.body.type === "customer.subscription.created") {
-    // only charge once
-    if (req.body.data.object.metadata.first_and_last) {
+    // must have first and last on product
+    if (req.body.data.object.plan.metadata.first_and_last) {
+      // only charge once
       const charges = await getCustomerCharges(req.body.data.object.customer);
       if (charges.data.length === 1) {
         await chargeLastMonth(
