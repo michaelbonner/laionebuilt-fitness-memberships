@@ -101,7 +101,7 @@ const Home = () => {
             {componentState === "fail" && (
               <p className="text-center text-orange-800 py-8 lg:px-16 text-2xl font-normal">
                 Please see a Laionebuilt staff member or visit{` `}
-                <span className="font-semibold">laionebuiltfitness.com</span> to
+                <span className="font-semibold">LaioneBuiltFitness.com</span> to
                 update the status of your membership.
               </p>
             )}
