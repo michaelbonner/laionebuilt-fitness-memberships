@@ -61,7 +61,7 @@ const Home = () => {
           <div className="bg-black px-6 py-3 my-2">
             <img src="/laionebuilt-header.png" alt="Laionebuilt Fitness Logo" />
           </div>
-          <h1 className="text-lg text-white text-center m-4 text-xl pt-3">
+          <h1 className="m-4 pt-3 text-white text-center text-3xl font-light">
             Check Your Membership
           </h1>
         </div>
