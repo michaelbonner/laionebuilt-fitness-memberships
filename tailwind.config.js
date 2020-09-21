@@ -9,6 +9,7 @@ module.exports = {
   variants: {},
   plugins: [require("@tailwindcss/ui")],
   future: {
+    purgeLayersByDefault: true,
     removeDeprecatedGapUtilities: true,
   },
 };
