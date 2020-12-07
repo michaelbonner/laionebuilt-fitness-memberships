@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <div
       className={`${componentState === "initial" ? "bg-gray-200" : ""}${
-        componentState === "fail" ? "bg-orange-500" : ""
+        componentState === "fail" ? "bg-yellow-500" : ""
       }${
         componentState === "success" ? "bg-green-500" : ""
       } min-h-screen flex flex-col items-center justify-center px-4 transition duration-300 ease-in-out`}
@@ -99,7 +99,7 @@ const Home = () => {
               </form>
             )}
             {componentState === "fail" && (
-              <p className="text-center text-orange-800 py-8 lg:px-16 text-2xl font-normal">
+              <p className="text-center text-yellow-800 py-8 lg:px-16 text-2xl font-normal">
                 Please see a Laionebuilt staff member or visit{` `}
                 <span className="font-semibold">LaioneBuiltFitness.com</span> to
                 update the status of your membership.
