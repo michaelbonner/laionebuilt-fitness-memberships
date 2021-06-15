@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
 
   const onClick = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     if (!email) {
       return false;
@@ -17,6 +19,7 @@ const Home = () => {
     let data = await (await fetch(`/api/subscription/${email}`)).json();
     setComponentState(data.success ? "success" : "fail");
     setCountDown(10);
+    setIsSubmitting(false);
   };
 
   const resetForm = () => {
@@ -59,7 +62,12 @@ const Home = () => {
       <div className="bg-white overflow-hidden shadow rounded-lg w-full lg:w-2/3 my-4">
         <div className="border-b border-gray-200 px-4 py-5 sm:px-6 bg-black">
           <div className="bg-black px-6 py-3 my-2">
-            <img src="/laionebuilt-header.png" alt="Laionebuilt Fitness Logo" />
+            <Image
+              src="/laionebuilt-header.png"
+              alt="Laionebuilt Fitness Logo"
+              width="891"
+              height="103"
+            />
           </div>
           <h1 className="m-4 pt-3 text-white text-center text-3xl font-light">
             Check Your Membership
@@ -71,7 +79,7 @@ const Home = () => {
               <form
                 autoComplete="off"
                 className="sm:flex py-12"
-                onClick={onClick}
+                onSubmit={onClick}
               >
                 <input
                   autoComplete="false"
