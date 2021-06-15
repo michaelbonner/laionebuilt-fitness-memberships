@@ -1,6 +1,7 @@
 import Head from "next/head";
+import Script from "next/script";
 import { useRouter } from "next/router";
-import { useEffect, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 
 const Plan = () => {
   const router = useRouter();
@@ -23,9 +24,9 @@ const Plan = () => {
     <div
       className={`min-h-screen flex flex-col items-center justify-center px-4 transition duration-300 ease-in-out`}
     >
+      <Script src="https://js.stripe.com/v3/" strategy="beforeInteractive" />
       <Head>
         <title>Laionebuilt Fitness Membership</title>
-        <script src="https://js.stripe.com/v3/"></script>
       </Head>
 
       <div className="w-full lg:w-2/3 my-4">Redirecting to checkout...</div>
