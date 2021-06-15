@@ -13,6 +13,7 @@ const Plan = () => {
     async function fetchStripeCheckoutSession() {
       let response = await (await fetch(`/api/plan/${planId}`)).json();
       if (!response.data) {
+        console.log("response", response);
         setState("error");
         return;
       }
