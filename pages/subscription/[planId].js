@@ -81,19 +81,13 @@ const Plan = () => {
             801-453-5055
           </a>
         </p>
-        <div className="flex space-x-2 pt-4">
+        <div className="flex space-x-2 pt-3">
           <a
             className="py-2 px-4 rounded-md bg-gray-500 hover:bg-gray-400 shadow-md text-white transition-all"
             href="https://www.laionebuiltfitness.com/about-us-contact"
           >
             Contact us
           </a>
-          <button
-            className="py-2 px-4 rounded-md bg-black hover:bg-gray-800 shadow-md text-white transition-all"
-            onClick={() => window.history.back()}
-          >
-            Go back
-          </button>
         </div>
       </div>
     );
