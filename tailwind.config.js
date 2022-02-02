@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./pages/**/*.js", "./pages/**/*.jsx"],
+  content: ["./pages/**/*.js", "./pages/**/*.jsx"],
   theme: {
     fontFamily: {
       sans: ["Roboto", "sans-serif"],
